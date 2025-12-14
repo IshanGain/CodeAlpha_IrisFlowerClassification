@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Iris Classifier Input</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f9f506",
+              "background-light": "#f8f8f5",
+              "background-dark": "#23220f",
+              "iris-purple": "#6a5acd",
+              "iris-green": "#2e8b57",
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#1c1c0d] dark:text-white min-h-screen flex flex-col overflow-x-hidden transition-colors duration-200">
+<header class="w-full border-b border-[#e9e8ce] dark:border-[#3a392a] bg-white/80 dark:bg-black/20 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-iris-purple/10 flex items-center justify-center text-iris-purple">
+<span class="material-symbols-outlined" style="font-size: 20px;">local_florist</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">Iris Classifier</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-iris-purple transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-iris-purple transition-colors" href="#">About</a>
+<a class="text-sm font-medium hover:text-iris-purple transition-colors" href="#">Dataset</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary/80 text-black px-5 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">code</span>
+<span>GitHub</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-6 py-8 md:py-12 lg:py-16">
+<div class="grid lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-iris-purple/10 text-iris-purple w-fit">
+<span class="material-symbols-outlined text-[16px]">science</span>
+<span class="text-xs font-bold uppercase tracking-wider">AI Powered</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-black leading-[1.1] tracking-tight">
+                        Predict <span class="text-transparent bg-clip-text bg-gradient-to-r from-iris-purple to-iris-green">Iris Species</span>
+</h2>
+<p class="text-[#5c5c4f] dark:text-[#a0a090] text-lg max-w-lg leading-relaxed">
+                        Enter the botanical measurements below to instantly identify the flower type using our machine learning model.
+                    </p>
+</div>
+<div class="bg-white dark:bg-[#2c2b1f] rounded-xl p-6 md:p-8 shadow-sm border border-[#e9e8ce] dark:border-[#3a392a] flex flex-col gap-8 relative overflow-hidden">
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="@container">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<label class="text-base font-semibold flex items-center gap-2" for="sepal-length">
+<span class="size-6 rounded-full bg-[#f0fdf4] dark:bg-white/5 text-iris-green flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">straighten</span>
+</span>
+                                    Sepal Length <span class="text-xs font-normal text-gray-400">(cm)</span>
+</label>
+<span class="bg-background-light dark:bg-black/30 px-3 py-1 rounded-lg text-sm font-mono font-medium min-w-[3rem] text-center" id="val-sepal-length">5.0</span>
+</div>
+<div class="relative h-6 flex items-center">
+<input class="w-full h-1.5 bg-[#e9e8ce] dark:bg-white/10 rounded-full appearance-none cursor-pointer accent-primary [&amp;::-webkit-slider-thumb]:appearance-none [&amp;::-webkit-slider-thumb]:w-6 [&amp;::-webkit-slider-thumb]:h-6 [&amp;::-webkit-slider-thumb]:rounded-full [&amp;::-webkit-slider-thumb]:bg-primary [&amp;::-webkit-slider-thumb]:border-4 [&amp;::-webkit-slider-thumb]:border-white dark:[&amp;::-webkit-slider-thumb]:border-[#2c2b1f] [&amp;::-webkit-slider-thumb]:shadow-md transition-all hover:[&amp;::-webkit-slider-thumb]:scale-110" id="sepal-length" max="10" min="0" oninput="document.getElementById('val-sepal-length').innerText = this.value" step="0.1" type="range" value="5.0"/>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono uppercase tracking-wider px-1">
+<span>0 cm</span>
+<span>10 cm</span>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<label class="text-base font-semibold flex items-center gap-2" for="sepal-width">
+<span class="size-6 rounded-full bg-[#f0fdf4] dark:bg-white/5 text-iris-green flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">space_bar</span>
+</span>
+                                    Sepal Width <span class="text-xs font-normal text-gray-400">(cm)</span>
+</label>
+<span class="bg-background-light dark:bg-black/30 px-3 py-1 rounded-lg text-sm font-mono font-medium min-w-[3rem] text-center" id="val-sepal-width">3.5</span>
+</div>
+<div class="relative h-6 flex items-center">
+<input class="w-full h-1.5 bg-[#e9e8ce] dark:bg-white/10 rounded-full appearance-none cursor-pointer accent-primary [&amp;::-webkit-slider-thumb]:appearance-none [&amp;::-webkit-slider-thumb]:w-6 [&amp;::-webkit-slider-thumb]:h-6 [&amp;::-webkit-slider-thumb]:rounded-full [&amp;::-webkit-slider-thumb]:bg-primary [&amp;::-webkit-slider-thumb]:border-4 [&amp;::-webkit-slider-thumb]:border-white dark:[&amp;::-webkit-slider-thumb]:border-[#2c2b1f] [&amp;::-webkit-slider-thumb]:shadow-md transition-all hover:[&amp;::-webkit-slider-thumb]:scale-110" id="sepal-width" max="10" min="0" oninput="document.getElementById('val-sepal-width').innerText = this.value" step="0.1" type="range" value="3.5"/>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono uppercase tracking-wider px-1">
+<span>0 cm</span>
+<span>10 cm</span>
+</div>
+</div>
+</div>
+<div class="h-px w-full bg-[#e9e8ce] dark:bg-white/10"></div>
+<div class="@container">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<label class="text-base font-semibold flex items-center gap-2" for="petal-length">
+<span class="size-6 rounded-full bg-[#f5f3ff] dark:bg-white/5 text-iris-purple flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">straighten</span>
+</span>
+                                    Petal Length <span class="text-xs font-normal text-gray-400">(cm)</span>
+</label>
+<span class="bg-background-light dark:bg-black/30 px-3 py-1 rounded-lg text-sm font-mono font-medium min-w-[3rem] text-center" id="val-petal-length">1.4</span>
+</div>
+<div class="relative h-6 flex items-center">
+<input class="w-full h-1.5 bg-[#e9e8ce] dark:bg-white/10 rounded-full appearance-none cursor-pointer accent-primary [&amp;::-webkit-slider-thumb]:appearance-none [&amp;::-webkit-slider-thumb]:w-6 [&amp;::-webkit-slider-thumb]:h-6 [&amp;::-webkit-slider-thumb]:rounded-full [&amp;::-webkit-slider-thumb]:bg-primary [&amp;::-webkit-slider-thumb]:border-4 [&amp;::-webkit-slider-thumb]:border-white dark:[&amp;::-webkit-slider-thumb]:border-[#2c2b1f] [&amp;::-webkit-slider-thumb]:shadow-md transition-all hover:[&amp;::-webkit-slider-thumb]:scale-110" id="petal-length" max="10" min="0" oninput="document.getElementById('val-petal-length').innerText = this.value" step="0.1" type="range" value="1.4"/>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono uppercase tracking-wider px-1">
+<span>0 cm</span>
+<span>10 cm</span>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<label class="text-base font-semibold flex items-center gap-2" for="petal-width">
+<span class="size-6 rounded-full bg-[#f5f3ff] dark:bg-white/5 text-iris-purple flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">space_bar</span>
+</span>
+                                    Petal Width <span class="text-xs font-normal text-gray-400">(cm)</span>
+</label>
+<span class="bg-background-light dark:bg-black/30 px-3 py-1 rounded-lg text-sm font-mono font-medium min-w-[3rem] text-center" id="val-petal-width">0.2</span>
+</div>
+<div class="relative h-6 flex items-center">
+<input class="w-full h-1.5 bg-[#e9e8ce] dark:bg-white/10 rounded-full appearance-none cursor-pointer accent-primary [&amp;::-webkit-slider-thumb]:appearance-none [&amp;::-webkit-slider-thumb]:w-6 [&amp;::-webkit-slider-thumb]:h-6 [&amp;::-webkit-slider-thumb]:rounded-full [&amp;::-webkit-slider-thumb]:bg-primary [&amp;::-webkit-slider-thumb]:border-4 [&amp;::-webkit-slider-thumb]:border-white dark:[&amp;::-webkit-slider-thumb]:border-[#2c2b1f] [&amp;::-webkit-slider-thumb]:shadow-md transition-all hover:[&amp;::-webkit-slider-thumb]:scale-110" id="petal-width" max="10" min="0" oninput="document.getElementById('val-petal-width').innerText = this.value" step="0.1" type="range" value="0.2"/>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono uppercase tracking-wider px-1">
+<span>0 cm</span>
+<span>10 cm</span>
+</div>
+</div>
+</div>
+<div class="pt-4">
+                        <button id="classify-btn" class="w-full bg-primary hover:bg-[#eae605] active:scale-[0.98] text-black font-bold text-lg py-4 rounded-full shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center justify-center gap-3 group">
+<span class="material-symbols-outlined transition-transform group-hover:rotate-12">psychology</span>
+                            Classify Species
+                        </button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-24 h-fit">
+<div class="bg-gradient-to-br from-[#6a5acd] to-[#8a2be2] text-white rounded-xl p-8 shadow-xl relative overflow-hidden min-h-[300px] flex flex-col justify-between group">
+<div class="absolute inset-0 opacity-20">
+<div class="absolute -right-10 -bottom-10 w-48 h-48 rounded-full border-[20px] border-white/20"></div>
+<div class="absolute -left-10 top-10 w-32 h-32 rounded-full bg-white/30 blur-2xl"></div>
+</div>
+<div class="relative z-10">
+<p class="text-white/80 text-sm font-medium uppercase tracking-widest mb-2">Prediction Result</p>
+<h3 id="predicted-species" class="text-4xl font-black mb-1">Iris Setosa</h3>
+<p id="confidence-score" class="text-white/90 text-sm font-medium">98.5% Confidence Score</p>
+</div>
+<div class="relative z-10 flex-1 flex items-center justify-center py-6">
+<div class="bg-white/20 backdrop-blur-sm rounded-full p-6 ring-4 ring-white/10">
+<span class="material-symbols-outlined text-6xl text-white">local_florist</span>
+</div>
+</div>
+<div class="relative z-10 border-t border-white/20 pt-4 mt-auto">
+<p id="species-description" class="text-xs text-white/70 leading-relaxed">
+                            Iris Setosa is typically characterized by smaller petals compared to other species. Your measurements strongly align with this classification.
+                        </p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-[#2c2b1f] p-4 rounded-xl border border-[#e9e8ce] dark:border-[#3a392a] hover:border-iris-purple/50 transition-colors">
+<div class="bg-iris-purple/10 w-10 h-10 rounded-full flex items-center justify-center text-iris-purple mb-3">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h4 class="font-bold text-sm mb-1">High Accuracy</h4>
+<p class="text-xs text-gray-500">Model trained on 150 verified samples.</p>
+</div>
+<div class="bg-white dark:bg-[#2c2b1f] p-4 rounded-xl border border-[#e9e8ce] dark:border-[#3a392a] hover:border-iris-green/50 transition-colors">
+<div class="bg-iris-green/10 w-10 h-10 rounded-full flex items-center justify-center text-iris-green mb-3">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<h4 class="font-bold text-sm mb-1">Eco-Friendly</h4>
+<p class="text-xs text-gray-500">Identifying nature with digital precision.</p>
+</div>
+</div>
+<div class="h-32 w-full rounded-xl overflow-hidden relative">
+<img alt="Abstract purple and blue gradients resembling flower petals" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" data-alt="Abstract purple and blue gradients resembling flower petals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmCHmPBJbiiKpyDWKFt2HbEIsgBt0heoAuSEpHMWshc493n2ilVTcEuAIfIXiP0KfLQnTA65Iy9SMAreUnmRLH_NZKtoEpFWfuJicnkeePvMVlCOrwLhtxxvL_odBxeUtqFHbh5ftaaq_TU7tK7BFZEWysz_9MRsEeeLBAU1lg8KcT3vmJM-q3A4i7CP0Pbxq2ULEmf-wAtUrQrXSZXN-m4-MWpy_N0QehnOS9ZUp-IMJ4ij_3gWQ1Q0lfN_CB8jNcDViRvPN97d4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-medium">Exploring ecological data patterns</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-[#e9e8ce] dark:border-[#3a392a] py-8 bg-white dark:bg-[#2c2b1f]">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-sm text-gray-500">© 2025 Iris ML Project. Designed for science.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+
+<script>
+document.getElementById('classify-btn').addEventListener('click', async function() {
+    const sepalLength = parseFloat(document.getElementById('sepal-length').value);
+    const sepalWidth = parseFloat(document.getElementById('sepal-width').value);
+    const petalLength = parseFloat(document.getElementById('petal-length').value);
+    const petalWidth = parseFloat(document.getElementById('petal-width').value);
+
+    const response = await fetch('/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            sepal_length: sepalLength,
+            sepal_width: sepalWidth,
+            petal_length: petalLength,
+            petal_width: petalWidth
+        })
+    });
+
+    const result = await response.json();
+
+    document.getElementById('predicted-species').textContent = result.species;
+    document.getElementById('confidence-score').textContent = result.confidence + '% Confidence Score';
+    document.getElementById('species-description').textContent = result.description;
+});
+</script>
+
+</body></html>
