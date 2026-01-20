@@ -2,7 +2,7 @@ IRIS FLOWER CLASSIFICATION (INTERNSHIP PROJECT BY CODEALPHA):
 - This project uses a Decision Tree classifier to predict iris flower species (Setosa, Versicolor, Virginica) from sepal and petal measurements. The model learns from four input features—SepalLengthCm, SepalWidthCm, PetalLengthCm, and PetalWidthCm—to classify the Species of an iris flower.
 
 LIVE DEMO:
-- https://codealpha-irisflowerclassification-2.onrender.com/
+- https://irisflowerclassification-hxy5.onrender.com/
 
 FEATURES:
 - Uses DecisionTreeClassifier for multi‑class classification on the Iris dataset.
