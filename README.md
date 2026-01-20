@@ -12,8 +12,8 @@ FEATURES:
 - Simple front‑end/web interface via app.py and templates/ to predict species from user inputs.
 
 INSTALLATION:
-- git clone https://github.com/IshanGain/CodeAlpha_IrisFlowerClassification.git
-- cd CodeAlpha_IrisFlowerClassification
+- git clone https://github.com/IshanGain/IrisFlowerClassification.git
+- cd IrisFlowerClassification
 - pip install -r requirements.txt
 
 RUN LOCALLY (OPTIONAL):
@@ -22,7 +22,7 @@ RUN LOCALLY (OPTIONAL):
 - Then open the local URL shown in the terminal to use the app on your machine.
 
 PROJECT STRUCTURE:
-- CodeAlpha_IrisFlowerClassification/
+- IrisFlowerClassification/
 - ├── Iris.csv                  # Dataset
 - ├── IrisClassification.ipynb  # EDA + model training notebook
 - ├── app.py                    # Web app for predictions
